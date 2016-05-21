@@ -1,4 +1,4 @@
-module CountrySelect
+module GenreSelect
   FORMATS = {}
 
   FORMATS[:default] = lambda do |country|

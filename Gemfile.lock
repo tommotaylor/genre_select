@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    country_select (2.5.2)
+    genre_select (0.0.1)
       countries (~> 1.2.0)
       sort_alphabetical (~> 1.0)
 
@@ -280,7 +280,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack (~> 3)
-  country_select!
+  genre_select!
   pry (~> 0)
   psych
   racc
@@ -290,4 +290,4 @@ DEPENDENCIES
   wwtd
 
 BUNDLED WITH
-   1.11.2
+   1.12.3

@@ -1,7 +1,7 @@
 module ActionView
   module Helpers
     class FormBuilder
-      def country_select(method, priority_or_options = {}, options = {}, html_options = {})
+      def genre_select(method, priority_or_options = {}, options = {}, html_options = {})
         if Hash === priority_or_options
           html_options = options
           options = priority_or_options
@@ -9,19 +9,19 @@ module ActionView
           options[:priority_countries] = priority_or_options
         end
 
-        @template.country_select(@object_name, method, objectify_options(options), @default_options.merge(html_options))
+        @template.genre_select(@object_name, method, objectify_options(options), @default_options.merge(html_options))
       end
     end
 
     module FormOptionsHelper
-      def country_select(object, method, options = {}, html_options = {})
-        Tags::CountrySelect.new(object, method, self, options, html_options).render
+      def genre_select(object, method, options = {}, html_options = {})
+        Tags::GenreSelect.new(object, method, self, options, html_options).render
       end
     end
 
     module Tags
-      class CountrySelect < Base
-        include ::CountrySelect::TagHelper
+      class GenreSelect < Base
+        include ::GenreSelect::TagHelper
 
         def initialize(object_name, method_name, template_object, options, html_options)
           @html_options = html_options
@@ -30,7 +30,7 @@ module ActionView
         end
 
         def render
-          select_content_tag(country_option_tags, @options, @html_options)
+          select_content_tag(genre_option_tags, @options, @html_options)
         end
       end
     end
