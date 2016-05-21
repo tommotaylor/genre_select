@@ -23,12 +23,19 @@ describe "GenreSelect" do
     EOS
   end
 
-  it "finds and selects the genre value from the Model object" do
-    selected_tag = "selected=\"selected\">blues"
-    album.genre = "blues"
+  it "finds and pre-selects the existing genre attribute value" do
+    selected_tag = "selected=\"selected\">Blues"
+    album.genre = "Blues"
     view = builder.genre_select(:genre)
 
     expect(view).to include(selected_tag)
+  end
+
+  it "loads the genre options" do
+    genres = options_for_select(GenreSelect::Data::Genres::GENRES_ARRAY)
+    view = builder.genre_select(:genre)
+
+    expect(view).to include(genres)
   end
 
   it "supports the select prompt" do

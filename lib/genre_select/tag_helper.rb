@@ -12,7 +12,7 @@ module GenreSelect
     private
 
     def genre_options
-      (["folk", "blues", "jazz"])
+      (GenreSelect::Data::Genres::GENRES_ARRAY)
     end
   end
 end
